@@ -1,48 +1,26 @@
-# 🏦 Previsão de Score de Crédito com IA
+🏦 Previsão de Score de Crédito (AI Credit Scoring)
+Este projeto simula um problema real de uma instituição financeira que deseja automatizar a classificação de crédito de seus clientes para agilizar processos e reduzir riscos.
 
-Este projeto aplica técnicas de **Machine Learning** para resolver um problema clássico de instituições financeiras: a análise automática de risco de crédito.
+🎯 Objetivo
+Criar um modelo de Machine Learning capaz de ler o histórico financeiro de um cliente e prever automaticamente seu Score de Crédito: Good (Bom), Standard (Padrão) ou Poor (Ruim).
 
-O objetivo é classificar novos clientes em três categorias de risco (**Good**, **Standard** ou **Poor**) com base em seu histórico financeiro, automatizando um processo que antes era manual.
+🛠️ Tecnologias Utilizadas
+Python (Linguagem principal)
 
-## 📊 O Desafio
-Um banco possui uma base de dados histórica de clientes e deseja criar um modelo preditivo capaz de:
-1.  Ler as informações financeiras de um novo cliente.
-2.  Classificar automaticamente seu *Score de Crédito*.
-3.  Atingir uma acurácia superior a 80% nas previsões.
+Pandas (Análise e manipulação de dados)
 
-## 🛠️ Tecnologias Utilizadas
-* **Python 3**
-* **Pandas:** Manipulação e análise de dados tabulares.
-* **Scikit-Learn:** Criação e treinamento dos modelos de Machine Learning.
-    * *LabelEncoder:* Para tratamento de variáveis categóricas (texto em números).
-    * *RandomForestClassifier:* Algoritmo de Árvores de Decisão.
-    * *KNeighborsClassifier:* Algoritmo KNN (Vizinhos Próximos).
+Scikit-Learn (Criação e treinamento dos modelos de Machine Learning)
 
-## ⚙️ Funcionalidades do Notebook
-1.  **Análise Exploratória:** Importação e visualização inicial da base `clientes.csv`.
-2.  **Tratamento de Dados:**
-    * Conversão de colunas de texto (`profissao`, `mix_credito`, etc.) em valores numéricos essenciais para a IA usando `LabelEncoder`.
-3.  **Machine Learning:**
-    * Divisão da base em dados de **Treino (70%)** e **Teste (30%)**.
-    * Treinamento comparativo entre dois modelos: **Árvore de Decisão** vs **KNN**.
-4.  **Avaliação de Performance:** Cálculo da acurácia de cada modelo com dados nunca vistos antes.
+📊 Resultados
+Foram testados dois modelos: K-Nearest Neighbors (KNN) e Random Forest.
 
-## 📈 Resultados
-Após os testes, o modelo **Random Forest (Árvore de Decisão)** apresentou o melhor desempenho:
+O modelo Random Forest obteve a melhor performance, com uma acurácia superior a 82%.
 
-* **Acurácia Random Forest:** ~82% ✅ (Modelo Escolhido)
-* **Acurácia KNN:** ~74%
+Identificou-se que as variáveis dias_atraso e divida_total são as mais determinantes para o score.
 
-O modelo vencedor foi utilizado para processar a base `novos_clientes.csv` e gerar as previsões finais de risco.
+🚀 Como Executar
+Clone o repositório.
 
-## 📦 Como executar
-1.  Clone o repositório.
-2.  Instale as dependências:
-    ```bash
-    pip install pandas scikit-learn ipykernel
-    ```
-3.  Abra o arquivo `.ipynb` no VS Code ou Jupyter Notebook.
-4.  Execute as células sequencialmente ("Run All").
+Instale as dependências: pip install pandas scikit-learn seaborn.
 
----
-*Projeto desenvolvido durante a Jornada Python da Hashtag Treinamentos.*
+Execute o notebook credit_score_prediction.ipynb.
